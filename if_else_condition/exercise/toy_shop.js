@@ -26,10 +26,10 @@ function toyShop (input) {
     let leftMoney = 0;
     if (totalSum >= trip) {
         leftMoney = totalSum - trip;
-        console.log(`Yes! ${leftMoney} lv left.`)
+        console.log(`Yes! ${leftMoney.toFixed(2)} lv left.`)
     } else {
         leftMoney = trip - totalSum
-        console.log(`Not enough money! ${leftMoney} lv needed.`)
+        console.log(`Not enough money! ${leftMoney.toFixed(2)} lv needed.`)
     }
 }
 toyShop(["320",
