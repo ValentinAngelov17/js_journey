@@ -6,27 +6,27 @@ function histogram(input) {
     let p4=0;
     let p5=0;
 
-    for (i = 1; i <= numbers; i++) {
+    for (let i = 1; i <= numbers; i++) {
         let number = Number(input[i]);
-        switch (number) {
-            case number < 200:
-                p1 += 1;
-                break;
-            case number >= 200 && number < 400:
-                p2++;
-                break;
-            case number >= 400 && number < 600:
-                p3++;
-                break;
-            case number >= 600 && number < 800:
-                p4++;
-                break;
-            case number >= 800:
-                p5++;
-                break;
+        if (number < 200) {
+            p1++;
+        } else if (number < 400 && number >= 200) {
+            p2++;
+        } else if (number < 600 && number >= 400) {
+            p3++;
+        } else if (number < 800 && number >= 600) {
+            p4++;
+        } else {
+            p5++;
         }
     }
-    console.log(`${p1 / 20 *100}%`);
+    
+
+    console.log(`${(p1 / numbers *100).toFixed(2)}%`);
+    console.log(`${(p2 / numbers *100).toFixed(2)}%`);
+    console.log(`${(p3 / numbers *100).toFixed(2)}%`);
+    console.log(`${(p4 / numbers *100).toFixed(2)}%`);
+    console.log(`${(p5 / numbers *100).toFixed(2)}%`);
 }
 histogram(["3",
 "1",
